@@ -91,9 +91,9 @@ async function runValidationTests() {
   });
   console.log('Resultado Prueba 3: INTEGRACION SATISFACTORIA\n');
 
-  // PRUEBA 4: Tolerancia a Fallos e Indisponibilidad (Falla simulada en API 2 - Clima)
+  // PRUEBA 4: Prueba de indisponibilidad: error 503 en el servicio de clima con el resto de la informacion disponible
   console.log('---------------------------------------------------------------');
-  console.log('[PRUEBA 4] Verificacion de Degradacion Elegante: API 2 no disponible');
+  console.log('[PRUEBA 4] Prueba de indisponibilidad: error 503 en el servicio de clima con el resto de la informacion disponible');
   console.log('---------------------------------------------------------------');
   const resFallaClima = await queryIntegratedDestination('París', { weather: true });
   console.log('Estado API 1 (Geo):', resFallaClima.services.geocoding.status, '-> Informacion preservada.');
